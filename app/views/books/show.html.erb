@@ -1,0 +1,24 @@
+  <div class="container">
+    <div class="row">
+   
+      <div class="col-lg-3" style="background-color: #cccccc;">
+        <%= render 'partial/sidebar', user: @bookdetail.user, book: @book  %>
+      </div>
+    
+  <div class="col-lg-9" style="background-color: #999999;">
+    <h2>book detail</h2>
+    <table>
+    <tr align="center">
+          <td><%= @bookdetail.book_name %></td>
+          <td><%= @bookdetail.caption %></td>
+          <td>
+          <% if @bookdetail.user.id == current_user.id %>
+          <%= link_to "編集", edit_book_path(@bookdetail.id) %>
+          <%= link_to "削除", book_path(@bookdetail.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+          <% end %>
+          </td>
+          </tr>
+     </table>
+   </div>
+  </div>
+</div>
