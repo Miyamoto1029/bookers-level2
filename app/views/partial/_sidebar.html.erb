@@ -3,7 +3,7 @@
   <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
   <div>name<%= user.name %></div>
   <div>introduction</div>
-  <div><%= link_to "プロフィール編集", edit_user_path(user) %></div>
+  <div><%= link_to "プロフィール編集", edit_user_path(user), class: "edit_user_#{user.id}" %></div>
 
  <h2>New book</h2>
 <%= form_for(book) do |f| %>

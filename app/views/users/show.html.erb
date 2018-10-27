@@ -1,3 +1,4 @@
+<h1>show</h1>
 <div class="container">
   <div class="row">
     <div class="col-lg-3" style="background-color: #cccccc;">
@@ -26,10 +27,9 @@
  		<div class="col-lg-9" style="background-color: #999999;">
  			<table>
     <tr align="center">
-        </tr>
-        <% @books.reverse_each do |book| %>
-        <tr>
-         
+
+        <tr><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %></tr>
+        <tr><% @books.reverse_each do |book| %><tr>
         <td><%=link_to book.book_name, "/books/#{book.id}" %></td>
         <!--  <td><%= book.book_name %></td> -->
          <td><%= book.caption %></td>
