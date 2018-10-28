@@ -8,6 +8,7 @@ class BooksController < ApplicationController
 		@book = Book.new(books_params)
 		@book.user_id = current_user.id
 		@book.save
+		flash[:success] = "successfully."
 		redirect_to books_path
 	end
 
