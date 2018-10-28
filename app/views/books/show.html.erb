@@ -1,12 +1,13 @@
 books/show
 <div class="container">
   <div class="row">
-    <div class="col-lg-3" style="background-color: #cccccc;">
+    <div class="col-lg-3">
       <%= render 'partial/sidebar', user: @bookdetail.user, book: @book  %>
     </div>
-    <div class="col-lg-9" style="background-color: #999999;">
-      <table>
-        <tr align="center">
+    <div class="col-lg-9">
+      <h2>Book detail</h2>
+      <table class="table">
+      <tr>
           <td><%= attachment_image_tag @bookdetail.user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %></td>
           <td> <%= link_to @bookdetail.user.name, user_path(@bookdetail.user.id) %></td>
           <td><%= @bookdetail.book_name %></td>
