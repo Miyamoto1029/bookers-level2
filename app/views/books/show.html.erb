@@ -9,7 +9,7 @@ books/show
       <table class="table">
       <tr>
           <td><%= attachment_image_tag @bookdetail.user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %></td>
-          <td> <%= link_to @bookdetail.user.name, user_path(@bookdetail.user.id) %></td>
+          <td> <%= link_to @bookdetail.user.username, user_path(@bookdetail.user.id) %></td>
           <td><%= @bookdetail.book_name %></td>
           <td><%= @bookdetail.caption %></td>
           <td>

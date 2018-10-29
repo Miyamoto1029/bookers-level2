@@ -7,8 +7,14 @@ user/show
   		<% if @user.id == current_user.id %>
   		<div>name<%= current_user.username %></div>
   		<div>introduction<%= current_user.introduction %></div>
-  		<div><%= link_to "プロフィール編集", edit_user_path(@user) %></div>
-  		<% end %>
+  	
+      
+      <div><%= link_to  edit_user_path(@user), class: 'edit_user_#{current_user.id}' do %>
+        <i class="btn btn-default glyphicon glyphicon-wrench"></i>
+        <% end %>
+      </div>
+  		
+      <% end %>
 	 <h2>New book</h2>
 		<%= form_for(@book) do |f| %>
  		<label>Title</label>
