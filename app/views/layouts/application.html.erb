@@ -39,28 +39,59 @@
         <span>home</span>
         <% end %>
       </li>
+
       <li>
-        <%= link_to "users", users_path, class: "users" %>
+      <%= link_to  users_path, class: 'users' do %>
+        <i class="glyphicon glyphicon-user users"></i>
+        <span>users</span>
+        <% end %>
       </li>
+
       <li>
-        <%= link_to "books", books_path, class: "books" %>
+      <%= link_to  books_path, class: 'books' do %>
+        <i class="glyphicon glyphicon-book books"></i>
+        <span>books</span>
+        <% end %>
       </li>
+
       <li>
-        <%= link_to "logout", destroy_user_session_path, class: "logout", method: :delete %>
+      <%= link_to  destroy_user_session_path, class: 'logout', method: :delete do %>
+        <i class="glyphicon glyphicon-log-out logout"></i>
+        <span>logout</span>
+        <% end %>
       </li>
+
+
     <% else %>
+
     <li>
-        <%= link_to "home", root_path, class: "home" %>
-      </li>
+      <%= link_to  root_path, class: 'home' do %>
+      <i class="glyphicon glyphicon-home home"></i>
+      <span>home</span>
+      <% end %>
+    </li>
+
     <li>
-        <%= link_to "about", books_about_path, class: "about" %>
-      </li>
-      <li>
-        <%= link_to "sign up", new_user_registration_path, class: "sign_up" %>
-      </li>
-      <li>
-        <%= link_to "login", new_user_session_path, class: "sign_in" %>
-      </li>
+      <%= link_to  books_about_path, class: 'about' do %>
+      <i class="glyphicon glyphicon-link about"></i>
+      <span>about</span>
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to  new_user_registration_path, class: 'sign_up' do %>
+      <i class="glyphicon glyphicon-edit sign_up"></i>
+      <span>sign up</span>
+      <% end %>
+    </li>
+
+    <li>
+      <%= link_to  new_user_session_path, class: 'sign_in' do %>
+      <i class="glyphicon glyphicon-log-in sign_in"></i>
+      <span>login</span>
+      <% end %>
+    </li>
+
     <% end %>
   </ul>
 </div>
