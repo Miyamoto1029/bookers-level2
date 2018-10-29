@@ -5,8 +5,8 @@ user/show
 	<h1>User info</h1>
   		<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
   		<% if @user.id == current_user.id %>
-  		<div>name<%= @user.name %></div>
-  		<div>introduction</div>
+  		<div>name<%= current_user.username %></div>
+  		<div>introduction<%= current_user.introduction %></div>
   		<div><%= link_to "プロフィール編集", edit_user_path(@user) %></div>
   		<% end %>
 	 <h2>New book</h2>
