@@ -12,11 +12,6 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" >
     <link rel="stylesheet" href="style.css">
-    <div class="social">
-      <i class="fab fa-facebook-square"></i>
-      <i class="fab fa-twitter-square"></i>
-      <i class="fab fa-instagram"></i>
-    </div>
   </head> 
 
   <body>
@@ -25,7 +20,6 @@
       <nav class="navbar navbar-main navbar-shadow" role="navigation" id="slide-nav" style="background-color: #000000">
         <div class="container relative">
           <div class="navbar-header">
-          
    
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
               <span class="sr-only">Toggle navigation</span>
@@ -34,7 +28,7 @@
               <span class="icon-bar"></span>
             </button>
           </div>
-          
+
           <div id="slidemenu">
   <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn" >
     <% if user_signed_in? %>
@@ -79,6 +73,14 @@
 <%# if alert %>
    <p class="alert alert-error"><%#= alert %></p>
 <%# end %>
+ <% flash.each do |key, value| %>
+          <div class="alert alert-<%= key %>">
+            <div class="container">
+              <%= value %>
+            </div>
+          </div>
+          <% end %>
+
     <%= yield %>
 
    
