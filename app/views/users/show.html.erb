@@ -2,65 +2,25 @@ user/show
 <div class="container">
   <div class="row">
     <div class="col-xs-3">
-	<h1>User info</h1>
-  		<%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
-  		<% if @user.id == current_user.id %>
-  		<div>name<%= current_user.username %></div>
-  		<div>introduction<%= current_user.introduction %></div>
-  	
-      
-      <div><%= link_to  edit_user_path(@user), class: 'edit_user_#{current_user.id}' do %>
-        <i class="btn btn-default glyphicon glyphicon-wrench"></i>
-        <% end %>
+  		 <%= render 'partial/sidebar', user: @user, book: @book  %>
       </div>
-  		
-      <% end %>
-	 <h2>New book</h2>
-		<%= form_for(@book) do |f| %>
- 		<label>Title</label>
- 		<br>
-		<%= f.text_field :book_name %>
-		<br> 
- 		<label>opinion</label>
- 		<br>
- 		<%= f.text_area :caption %>
-		<br>
-		<br>
- 		<%= f.submit 'Create Book' %>
- 		<% end %>
- 	</div>
 
- 		<div class="col-xs-9">
-      <h2>Books</h2>
-      <!-- <table>
-        <tr>
-          <th>日付</th>
-          <th>集合場所</th>
-        </tr>
-        <tr>
-          <td>2016/4/8</td>
-          <td>渋谷</td>
-        </tr>
-        <tr>
-          <td>2016/5/20</td>
-          <td>原宿</td>
-        </tr>
-      </table> -->
-
- 			<table class="table">
-          <tr>
-            <th>images</th>
-            <th>Title</th>
-            <th>opinion</th>
-          </tr>
-          <tr>
-            <% @books.reverse_each do |book| %>
-            <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %></td>
-            <td><%=link_to book.book_name, book_path(book.id) %></td>
-            <td><%= book.caption %></td>
-          </tr>
-        <% end %>
-     </table>
-		 </div>
-	</div>
+    		<div class="col-xs-9">
+    			<table class="table">
+            <tr>
+              <th>images</th>
+              <th>Title</th>
+              <th>opinion</th>
+            </tr>
+            <tr>
+              <% @books.reverse_each do |book| %>
+              <td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %></td>
+              <td><%=link_to book.book_name, book_path(book.id) %></td>
+              <td><%= book.caption %></td>
+            </tr>
+          <% end %>
+       </table>
+    	 </div>
+    </div>
+  </div>
 </div>
