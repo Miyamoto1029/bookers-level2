@@ -24,11 +24,11 @@
 	<%= form_for(book) do |f| %>
 	<label>Title</label>
 	<br>
-	<%= f.text_field :book_name %>
+	<%= f.text_field :book_name, class: "book_title" %>
 	<br>
 	<label>opinion</label>
 	<br>
-	<%= f.text_area :caption %>
+	<%= f.text_area :caption, class: "book_body" %>
 	<br>
 	<br>
 	<%= f.submit 'Create Book' %>
