@@ -36,7 +36,7 @@
         <label>Password</label>
         <%= f.password_field :password_confirmation, autocomplete: "off", class: "password_confirm", id:"inputConfirmPassword" %>
         <br><br>
-        <%= f.submit "Sign up", class: "btn btn-success sign_up" %>
+        <%= f.submit "Sign up", class: "sign_up" %>
         <% end %>
         <%= link_to "login", new_user_session_path, class: "sign_in" %>
         </div>

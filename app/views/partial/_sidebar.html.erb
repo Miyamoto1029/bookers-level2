@@ -8,8 +8,8 @@
   		<div>name<%= current_user.username %></div>
   		<div>introduction<%= current_user.introduction %></div>
 		
-		<%= link_to edit_user_path(user), class: 'edit_user_#{current_user.id}' do %>
-    	<i class="btn btn-default glyphicon glyphicon-wrench"></i>
+		<%= link_to edit_user_path(user), class: "edit_user_#{user.id}" do %>
+    		<i class="btn btn-default glyphicon glyphicon-wrench"></i>
     	<% end %>
 
     	<% else %>

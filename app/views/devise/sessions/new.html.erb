@@ -1,4 +1,3 @@
-sessioons/new
 <div class="container">
     <div class="row">
     <div class="col-lg-2">
@@ -24,10 +23,10 @@ sessioons/new
       
       <br>
       <br>
-    <%= f.submit "login", class: "btn btn-primary" %>
+    <%= f.submit "login", class: "sign_in" %>
   <% end %>
 <br>
-<%= link_to "Sing up",new_user_registration_path %>
+<%= link_to "Sing up",new_user_registration_path, class: "sign_up" %>
 <br>
 <%= link_to "Forgot your password?",new_user_registration_path %>
 </div>
