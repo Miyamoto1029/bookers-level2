@@ -6,8 +6,10 @@ books/top
 			<p align="left">In<i class="glyphicon glyphicon-book"></i>Bookers,</p>
 			<p align="left">you can share and exchange your options,inpressiond,and emotions</p>
 			<p align="left">about varioius books!</p>
-			<a class= "btn btn-info col-xs-10 col-xs-offset-1" href="/users/sign_in">Log in</a>
-			<%= link_to "Sing up",new_user_registration_path ,class:"btn btn-success col-xs-10 col-xs-offset-1" %>
+
+			<%= link_to "Log in",new_user_session_path ,class: "btn btn-info col-xs-10 col-xs-offset-1 sign_in" %>
+
+			<%= link_to "Sing up",new_user_registration_path ,class: "btn btn-success col-xs-10 col-xs-offset-1 sign_up" %>
 		</div>
 			<div class="row">
 				<div class="col-xs-3 col-xs-offset-9">
