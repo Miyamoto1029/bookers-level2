@@ -1,36 +1,61 @@
 <div>
   	<h1>User info</h1>
-
   	<%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', fallback: "no_image.jpg" %>
 
   	<% if user.id == current_user.id %>
 
-  		<div>name<%= current_user.username %></div>
-  		<div>introduction<%= current_user.introduction %></div>
-		
+  		<table class="table">
+  			<tbody>
+  				<tr></tr>
+  				<tr>
+  					<th>name</th>
+  					<th><%= current_user.username %></th>
+  				</tr>
+  				<tr></tr>
+  				<tr>
+  					<th>introduction</th>
+  					<th><%= current_user.introduction %></th>
+  				</tr>
+  			</tbody>
+  		</table>
+
+
 		<%= link_to edit_user_path(user), class: "edit_user_#{user.id}" do %>
-    		<i class="btn btn-default glyphicon glyphicon-wrench"></i>
+    		<i class="col-xs-12 btn btn-default glyphicon glyphicon-wrench"></i>
     	<% end %>
 
     	<% else %>
-			<div>name<%= user.username %></div>
-  			<div>introduction<%= user.introduction %></div>
-  		
 
-    <% end %>
+    	 <table class="table">
+  			<tbody>
+  				<tr></tr>
+  				<tr>
+  					<th>name</th>
+  					<th><%= user.username %></th>
+  				</tr>
+  				<tr></tr>
+  				<tr>
+  					<th>introduction</th>
+  					<th><<%= user.introduction %></th>
+  				</tr>
+  			</tbody>
+  		</table>
+
+   		<% end %>
 
 
 	<h2>New book</h2>
 	<%= form_for(book) do |f| %>
 	<label>Title</label>
 	<br>
-	<%= f.text_field :book_name, class: "book_title" %>
+	<%= f.text_field :book_name, class: "col-xs-12 book_title" %>
 	<br>
 	<label>opinion</label>
 	<br>
-	<%= f.text_area :caption, class: "book_body" %>
+	<%= f.text_area :caption, class: "col-xs-12 book_body" %>
 	<br>
 	<br>
-	<%= f.submit 'Create Book' %>
+	<br>
+	<%= f.submit 'Create Book', class: "btn btn-primary col-xs-12" %>
 	<% end %>
 </div>

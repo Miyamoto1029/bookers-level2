@@ -1,15 +1,32 @@
-books/index
-<% if flash[:success] %>
-  <p><%= flash[:success] %></p>
-<% end %>
+<p>books/index</p>
 
 <div class="container">
   <div class="row">
-   
+    <div>
+      <% if flash[:success] %>
+      <p><%= flash[:success] %></p>
+      <% end %>
+    </div>
+
+    <div>
+      <% if @book.errors.any? %>
+        <h3><%= @book.errors.count %> errors prohibited this user from being saved:</h3>
+        <div id="error_explanation" class="alert alert-danger">
+            <ul>
+                <span style="color:red">
+                    <% @book.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                    <% end %>
+                </span>
+            </ul>
+        </div>
+      <% end %>
+    </div>
+
     <div class="col-lg-3">
       <%= render 'partial/sidebar', user: @user, book: @book  %>
     </div>
-  
+    
     <div class="col-lg-9">
       <h2>Books</h2>
       <table class="table">
@@ -28,6 +45,9 @@ books/index
           </tr>
         <% end %>
       </table>
+    </div>
+    <div class="col-xs-3 col-xs-offset-9">
+      <p>CopyRight Infratop.inc</p>
     </div>
   </div>
 </div>
