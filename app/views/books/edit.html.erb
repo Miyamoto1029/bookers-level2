@@ -1,17 +1,26 @@
-<h2>editing book</h2>
+<!-- bootstrapを編集する予定のページ -->
+<div>
 
-<%= form_for(@books) do |f| %>
- <label>Title</label>
- <br>
- <%= f.text_field :book_name %>
- <br> 
- <label>opinion</label>
- <br>
- <%= f.text_area :caption %>
- <br>
- <br>
- <%= f.submit 'update book' %>
- <br>
- <td><%= link_to "Show", book_path %></td>
- <td><%= link_to "back", books_path %></td>
-<% end %>
+	<h2>Editing book</h2>
+
+	<%= form_for(@books) do |f| %>
+ 		<label>Title</label>
+ 		<br>
+ 		<%= f.text_field :book_name, class: "book_title" %>
+ 		<br>
+ 		<label>opinion</label>
+ 		<br>
+ 	<%= f.text_area :caption, class: "book_body" %>
+ 		<br>
+ 		<br>
+ 	<%= f.submit 'update book' %>
+ 		<br>
+ 		<td><%= link_to "Show", book_path, class: "books" %></td>
+		<td>|</td>
+ 		<td><%= link_to "back", books_path, class: "back" %></td>
+	<% end %>
+
+    <div class="col-xs-3 col-xs-offset-9">
+      <p>CopyRight Infratop.inc</p>
+    </div>
+</div>

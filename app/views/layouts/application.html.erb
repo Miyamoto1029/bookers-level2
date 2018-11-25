@@ -30,87 +30,90 @@
           </div>
 
           <div id="slidemenu">
-  <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn" >
-    <% if user_signed_in? %>
+            <nav class="navbr-left">
+              <span>Bookers</span>
+            </nav>
+              <ul class="nav navbar-nav navbar-right" data-hover="dropdown" data-animations="zoomIn fadeIn fadeInUp fadeIn" >
+                <% if user_signed_in? %>
 
-      <li>
-        <%= link_to  user_path(current_user.id), class: 'home' do %>
-        <i class="glyphicon glyphicon-home home"></i>
-        <span>home</span>
-        <% end %>
-      </li>
+                  <li>
+                    <%= link_to  user_path(current_user.id), class: 'home' do %>
+                    <i class="glyphicon glyphicon-home home"></i>
+                    <span>home</span>
+                    <% end %>
+                  </li>
 
-      <li>
-      <%= link_to  users_path, class: 'users' do %>
-        <i class="glyphicon glyphicon-user users"></i>
-        <span>users</span>
-        <% end %>
-      </li>
+                  <li>
+                  <%= link_to  users_path, class: 'users' do %>
+                    <i class="glyphicon glyphicon-user users"></i>
+                    <span>users</span>
+                    <% end %>
+                  </li>
 
-      <li>
-      <%= link_to  books_path, class: 'books' do %>
-        <i class="glyphicon glyphicon-book books"></i>
-        <span>books</span>
-        <% end %>
-      </li>
+                  <li>
+                  <%= link_to  books_path, class: 'books' do %>
+                    <i class="glyphicon glyphicon-book books"></i>
+                    <span>books</span>
+                    <% end %>
+                  </li>
 
-      <li>
-      <%= link_to  destroy_user_session_path, class: 'logout', method: :delete do %>
-        <i class="glyphicon glyphicon-log-out logout"></i>
-        <span>logout</span>
-        <% end %>
-      </li>
+                  <li>
+                  <%= link_to  destroy_user_session_path, class: 'logout', method: :delete do %>
+                    <i class="glyphicon glyphicon-log-out logout"></i>
+                    <span>logout</span>
+                    <% end %>
+                  </li>
 
 
-    <% else %>
+                <% else %>
 
-    <li>
-      <%= link_to  root_path, class: 'home' do %>
-      <i class="glyphicon glyphicon-home home"></i>
-      <span>home</span>
-      <% end %>
-    </li>
+                <li>
+                  <%= link_to  root_path, class: 'home' do %>
+                  <i class="glyphicon glyphicon-home home"></i>
+                  <span>home</span>
+                  <% end %>
+                </li>
 
-    <li>
-      <%= link_to  books_about_path, class: 'about' do %>
-      <i class="glyphicon glyphicon-link about"></i>
-      <span>about</span>
-      <% end %>
-    </li>
+                <li>
+                  <%= link_to  books_about_path, class: 'about' do %>
+                  <i class="glyphicon glyphicon-link about"></i>
+                  <span>about</span>
+                  <% end %>
+                </li>
 
-    <li>
-      <%= link_to  new_user_registration_path, class: 'sign_up' do %>
-      <i class="glyphicon glyphicon-edit sign_up"></i>
-      <span>sign up</span>
-      <% end %>
-    </li>
+                <li>
+                  <%= link_to  new_user_registration_path, class: 'sign_up' do %>
+                  <i class="glyphicon glyphicon-edit sign_up"></i>
+                  <span>sign up</span>
+                  <% end %>
+                </li>
 
-    <li>
-      <%= link_to  new_user_session_path, class: 'sign_in' do %>
-      <i class="glyphicon glyphicon-log-in sign_in"></i>
-      <span>login</span>
-      <% end %>
-    </li>
+                <li>
+                  <%= link_to  new_user_session_path, class: 'sign_in' do %>
+                  <i class="glyphicon glyphicon-log-in sign_in"></i>
+                  <span>login</span>
+                  <% end %>
+                </li>
 
-    <% end %>
-  </ul>
-</div>
-        </div>
-      </nav>
-    </div>
-  <%# if notice %>
-　　<p class="alert alert-notice"><%#= notice %></p>
-<%# end %>
-<%# if alert %>
-   <p class="alert alert-error"><%#= alert %></p>
-<%# end %>
- <% flash.each do |key, value| %>
-          <div class="alert alert-<%= key %>">
-            <div class="container">
-              <%= value %>
+                <% end %>
+              </ul>
             </div>
-          </div>
-          <% end %>
+            </div>
+          </nav>
+        </div>
+      <%# if notice %>
+    　　<p class="alert alert-notice"><%#= notice %></p>
+    <%# end %>
+    <%# if alert %>
+       <p class="alert alert-error"><%#= alert %></p>
+    <%# end %>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>">
+      <div class="container">
+      <%= value %>
+    </div>
+  </div>
+  <% end %>
 
     <%= yield %>
 
